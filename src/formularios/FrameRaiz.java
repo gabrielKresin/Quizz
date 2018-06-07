@@ -8,12 +8,14 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import javax.swing.JRadioButton;
 import javax.swing.UIManager;
 
 public abstract class FrameRaiz extends JFrame{
     private JPanel panelContent;
     private JPanel panelActions;
     private JButton buttonConfirm, buttonCancel, buttonPular, buttonHelp;
+    private JRadioButton opcaoA, opcaoB, opcaoC, opcaoD;
     
     public FrameRaiz(){
         try {

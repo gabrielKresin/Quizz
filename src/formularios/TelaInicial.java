@@ -1,14 +1,9 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package formularios;
 
-/**
- *
- * @author T-Gamer
- */
+import Objetos.Metodos;
+import Objetos.Jogador;
+import PopUps.Popups;
+
 public class TelaInicial extends javax.swing.JFrame {
 
     static void start() {
@@ -43,6 +38,11 @@ public class TelaInicial extends javax.swing.JFrame {
         setResizable(false);
 
         botaoConfirmar.setText("Confirmar");
+        botaoConfirmar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botaoConfirmarActionPerformed(evt);
+            }
+        });
 
         botaoRanking.setText("Ranking");
         botaoRanking.addActionListener(new java.awt.event.ActionListener() {
@@ -116,8 +116,44 @@ public class TelaInicial extends javax.swing.JFrame {
     }//GEN-LAST:event_botaoSairActionPerformed
 
     private void botaoRankingActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoRankingActionPerformed
+        this.dispose();
         Ranking.start();
     }//GEN-LAST:event_botaoRankingActionPerformed
+
+    private void botaoConfirmarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoConfirmarActionPerformed
+        boolean invalido = false;
+        Metodos m = new Metodos();
+        if(campoNome.getText().isEmpty()){
+            campoNome.requestFocus();
+            Popups.displayErrorMessageJOP("Nome inválido!", this);
+            invalido = true;
+            return;
+        }
+        Jogador j = new Jogador();
+        for (int i = 0; i < j.getJogadores().size(); i++) {
+            if(campoNome.getText().equals(j.getJogadores().get(i).getNome())){
+                campoNome.requestFocus();
+                Popups.displayErrorMessageJOP("Nome inválido!", this);
+                invalido = true;
+                break;
+            }            
+        }
+        if(invalido == false){
+            if(comboAssunto.getSelectedItem().equals("1ª Guerra Mundial")){
+                m.esvaziaValores();
+                m.geraPergundas("1ª Guerra Mundial");
+                new FormAssunto1();
+            }else if(comboAssunto.getSelectedItem().equals("2ª Guerra Mundial")){
+                m.esvaziaValores();
+                m.geraPergundas("2ª Guerra Mundial");
+                new FormAssunto2();
+            }else{
+                m.esvaziaValores();
+                m.geraPergundas("Guerra do Vietnã");
+                new FormAssunto3();
+            }
+        }
+    }//GEN-LAST:event_botaoConfirmarActionPerformed
 
     /**
      * @param args the command line arguments

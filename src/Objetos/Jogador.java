@@ -1,20 +1,26 @@
 package Objetos;
 
 import java.util.ArrayList;
-import java.util.Date;
 
 public class Jogador {
   
     private String nome;
-    private Date data;
+    private String data;
+    //Dia e mês ou dia mês e ano
     private int pontuacao;
 
-    public Jogador(String nome, Date data, int pontuacao) {
+    public Jogador(String nome, String data, int pontuacao) {
         this.nome = nome;
         this.data = data;
         this.pontuacao = pontuacao;
     }
 
+    
+    
+    public Jogador(){
+        
+    }
+    
     public String getNome() {
         return nome;
     }
@@ -23,11 +29,11 @@ public class Jogador {
         this.nome = nome;
     }
 
-    public Date getData() {
+    public String getData() {
         return data;
     }
 
-    public void setData(Date data) {
+    public void setData(String data) {
         this.data = data;
     }
 
@@ -39,11 +45,11 @@ public class Jogador {
         this.pontuacao = pontuacao;
     }
 
-    public static ArrayList<Jogador> getJogadores() {
+    public ArrayList<Jogador> getJogadores() {
         return jogadores;
     }
 
-    public static void setJogadores(ArrayList<Jogador> jogadores) {
+    public void setJogadores(ArrayList<Jogador> jogadores) {
         Jogador.jogadores = jogadores;
     }
     
