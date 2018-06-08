@@ -8,11 +8,16 @@ import java.util.Random;
 
 public class Metodos {
 
-    private ArrayList<Perguntas> perguntas = new ArrayList<>();
-    private int quantErros = 0;
-    private int quantAcertos = 0;
-    private int quantPulos = 0;
-    private int quantAjudas = 0;
+    static private ArrayList<Perguntas> perguntas = new ArrayList<>();
+
+    public static ArrayList<Perguntas> getPerguntas() {
+        return perguntas;
+    }
+    private static int quantAcertos = 0;
+
+    public int getQuantAcertos() {
+        return quantAcertos;
+    }
     private Random rand = new Random();
 
     public void preencheArrays() {
@@ -55,7 +60,7 @@ public class Metodos {
         p = new Perguntas("Qual dos países abaixo NÃO esta alinhado com as chamadas \"Potências Centrais\" durante a I Grande Guerra?", "a)Turquia.", "b)Bulgária.", "c)Sérvia.", "d)Alemanha.", "c");
         p.getPerguntasPrimeiraGuerra().add(p);
         p = new Perguntas("Em todos os sistemas de alianças formados por Bismarck, qual o país que foi sistematicamente excluído?", "a)Itália.", "b)Rússia.", "c)Áustria.", "d)França.", "d");
-        p.getPerguntasSegundaGuerra().add(p);
+        p.getPerguntasPrimeiraGuerra().add(p);
         p = new Perguntas("Qual foi o período de tempo da 2ª Guerra Mundial?", "a)1914-1918.", "b)1914-1935.", "c)1939-1945.", "d)1945-1947.", "c");
         p.getPerguntasSegundaGuerra().add(p);
         p = new Perguntas("Qual o nome dos dois lados dos combatentes?", "a)Eixo e Lado.", "b)Eixo e Aliado.", "c)Combatentes e Aliados.", "d)Aliados e Nazistas.", "b");
@@ -82,66 +87,65 @@ public class Metodos {
         p.getPerguntasSegundaGuerra().add(p);
         p = new Perguntas("Qual batalha foi a mais sangrenta de toda a guerra?", "a)Batalha de Stalingrado.", "b)Btalha de Ardenas.", "c)Batlha de Barbados.", "d)Batalha de Chicago.", "a");
         p.getPerguntasSegundaGuerra().add(p);
-        p = new Perguntas("Quando os alemães se renderam?", "a).", "b).", "c).", "d).", "");
+        p = new Perguntas("Quando os alemães se renderam?", "a)22 de junho de 1945.", "b)7 de maio de 1945.", "c)5 de novembro de 1945.", "d)1 de janeiro de 1945.", "b");
         p.getPerguntasSegundaGuerra().add(p);
-        p = new Perguntas("", "", "", "", "", "");
+        p = new Perguntas("“Esta guerra, de fato, é uma continuação da anterior.” (Winston Churchill, em discurso feito no Parlamento em 21 de agosto de 1941) A afirmativa acima confirma a continuidade latente de problemas não solucionados na Primeira Guerra Mundial, que contribuíram para alimentar antagonismos e levaram à eclosão da Segunda Guerra Mundial. Entre esses problemas, identificamos:", "a) o crescente nacionalismo econômico e o aumento da disputa por mercados consumidores e por áreas de investimentos.", "b) o desenvolvimento do imperialismo chinês da Ásia, com abertura para o Ocidente.", "c) os antagonismos austro-ingleses em torno da questão da Alsácia-Lorena;", "d) a oposição ideológica que fragilizou os vínculos entre os países, enfraquecendo todo tipo de nacionalismo;", "a");
         p.getPerguntasSegundaGuerra().add(p);
-        p = new Perguntas("", "", "", "", "", "");
+        p = new Perguntas("Em relação à Segunda Guerra Mundial, é correto afirmar que:", "a) Hitler empreendeu uma implacável perseguição aos judeus, que resultou na morte de seis milhões de pessoas.", "b) os norte-americanos permaneceram neutros na guerra até 1941, quando bombardearam Hiroshima e Nagasaki.", "c) de Gaulle foi o chefe do governo de Vichy.", "d) com o ataque alemão a Pearl Harbor, os norte-americanos resolveram entrar na guerra.", "a");
         p.getPerguntasSegundaGuerra().add(p);
-        p = new Perguntas("", "", "", "", "", "");
+        p = new Perguntas("O rompimento pelos nazistas do Pacto Germano-Soviético firmado entre a Alemanha e a União das Repúblicas Socialistas Soviéticas (URSS), no ano de 1939, fez com que a União Soviética entrasse na Segunda Guerra em 1943. O que foi o Pacto Germano-Soviético?", "a)Política de acordos efetivada por Hitler e Churchill.", "b)Efetivação do Pacto anti-Komintern entre Alemanha, URSS e Japão.", "c)Política de acordos entre Hitler e Stálin de não agressão e neutralidade entre Alemanha e União Soviética por dez anos.", "d)Pacto que assegurava à Alemanha o direito de incorporar territórios poloneses com a permissão da França e da Inglaterra.", "c");
         p.getPerguntasSegundaGuerra().add(p);
-        p = new Perguntas("", "", "", "", "", "");
+        p = new Perguntas("Quem era o primeiro-ministro britânico quando o Reino Unido declarou guerra à Alemanha nazista?", "a)Neville Chamberlain.", "b)Margaret Thatcher.", "c)Winston Churchill.", "d)Clement Atlee.", "c");
         p.getPerguntasSegundaGuerra().add(p);
-        p = new Perguntas("", "", "", "", "", "");
+        p = new Perguntas("Para combater as vantagens tecnológicas superiores americanas, qual foi a chocante tática militar que os japoneses levaram para a guerra e que teve um efeito devastador em 1944?", "a)Tática do kamikaze.", "b)Tática do Envolvimento duplo.", "c)Tática da guerra relâmpago.", "d)Tática de guerrilha.", "a");
         p.getPerguntasSegundaGuerra().add(p);
-        p = new Perguntas("", "", "", "", "", "");
+        p = new Perguntas("Qual foi a famosa tática militar usado pelos alemães na segunda guerra mundial?", "a)Blitzkrieg.", "Blitzcrank", "Blitz Brigade", "Barnblitz", "a");
+        p.getPerguntasSegundaGuerra().add(p);
+        p = new Perguntas("A Guerra do Vietnã, símbolo da resistência do povo vietnamita, submeteu as forças militares americanas a sua mais fragorosa derrota. Para os vietnamitas, a presença americana no Sudeste da Ásia apenas substituía as forças colonialistas da:", "a) França.", "b) Inglaterra.", "c) Holanda.", "d) Bélgica", "a");
         p.getPerguntasVietna().add(p);
-        p = new Perguntas("", "", "", "", "", "");
+        p = new Perguntas("Entre 1961 e 1973, um total de 57.939 norte-americanos morreram no conflito da Indochina, a mais longa e custosa guerra externa na história dos Estados Unidos. A Força Aérea dos EUA jogou sobre o Vietnã uma tonelagem de bombas, mais de três vezes superior ao que foi jogado na Alemanha durante a Segunda Guerra. Considerando-se a Guerra do Vietnã, é correto afirmar que:", "a) o conflito foi motivado pela intenção do governo norte-americano de impedir a expansão do comunismo no Sudeste asiático.", "b) os norte-americanos deram apoio decidido às ações de seu governo no Vietnã e manifestaram insatisfação quando suas tropas foram retiradas de lá.", "c) os vietnamitas que enfrentavam o exército dos EUA lutavam em condições difíceis, pois não dispunham de apoio externo.", "d) a saída das tropas norte-americanas e a subsequente derrota das forças locais pró-Ocidente levou à divisão do Vietnã.", "a");
         p.getPerguntasVietna().add(p);
-        p = new Perguntas("", "", "", "", "", "");
+        p = new Perguntas("Acerca da participação norte-americana na Guerra do Vietnã, marque a alternativa incorreta.", "a) durante o conflito, os Estados Unidos se utilizaram de armas químicas como o agente laranja, que causou graves problemas ambientais na região.", "b) a interferência americana tinha como objetivo impedir que os comunistas do Norte do Vietnã tomassem o poder do país e evitar que o comunismo se espalhasse pelo sudeste asiático.", "c) a entrada dos Estados Unidos no conflito se deu após o suposto ataque norte-vietnamita contra a embarcação americana USS Maddox.", "d) a saída americana do conflito se deu após a derradeira derrota na Batalha de Dien Bien Phu.", "d");
         p.getPerguntasVietna().add(p);
-        p = new Perguntas("", "", "", "", "", "");
+        p = new Perguntas("Durante o período histórico que ficou conhecido como GUERRA FRIA, a disputa entre o capitalismo e o comunismo, tivemos um conflito no sudeste asiático a GUERRA DO VIETNÃ. Entre as vários músicas de protesto dessa época, aponte a alternativa que mostra a música e o autor:", "a)The Beatles - Hey Jude.", "b)Master of War - Bob Dylan.", "c)The Beatles - Revolucion.", "d)Caetano Veloso - Alegria, Alegria.", "b");
         p.getPerguntasVietna().add(p);
-        p = new Perguntas("", "", "", "", "", "");
+        p = new Perguntas("Uma das peças de teatro que causou grande impacto no cenário teatral mundial e que fez muito sucesso no Brasil. As músicas dessa peças viraram \"músicas de protesto\" contra a Guerra do Vietnã. Qual o nome dessa peça que lembra alguma parte do nosso corpo?", "a)Hair.", "b)Head.", "c)Cabaret.", "d)The dogs.", "a");
         p.getPerguntasVietna().add(p);
-        p = new Perguntas("", "", "", "", "", "");
+        p = new Perguntas("Na realidade os Estados Unidos foram derrotados na Guerra do Vietnã, mas no cinema surge um personagem que quer mudar a realidade, mostrando o lado americano que só teve sucesso no filmes. Quem seria esse personagem e ator?", "a)Rambo - Jet Lee.", "b)Rambo - Jason Statham.", "c)Rambo - Teery Crees.", "d)Rambo - Sylvester Stallones.", "d");
         p.getPerguntasVietna().add(p);
-        p = new Perguntas("", "", "", "", "", "");
+        p = new Perguntas("Uma das frases que se tornaram muito conhecida na década de 1960, referente a Guerra do Vietnã e com um pequena mudança foi utilizada no programa de humor de Jô Soares. Qual era essa frase utilizada pelos jovens cabeludos daquela época?", "a)Faça amor, não faça guerra.", "b)Faça filho, não faça guerra.", "c)Faça guera, não faça amor.", "d)Não faça nada, não faça guerra.", "a");
         p.getPerguntasVietna().add(p);
-        p = new Perguntas("", "", "", "", "", "");
+        p = new Perguntas("Qual o nome da bomba invediária, também conhecido por fogo líquido utilizada pelos estadunidenses na guerra do vietnã?", "a)Napalm.", "b)Claymore.", "c)Molotov.", "d)Querosene.", "a");
         p.getPerguntasVietna().add(p);
-        p = new Perguntas("", "", "", "", "", "");
+        p = new Perguntas("O napalm era conhecido por:", "a)Queimar as suas vítimas.", "b)Sufocar suas vítimas.", "c)Afogar suas vítimas.", "d)Paralisar suas vítimas", "a");
         p.getPerguntasVietna().add(p);
-        p = new Perguntas("", "", "", "", "", "");
+        p = new Perguntas("O napalm foi usado em:", "a)Bombas incendiárias.", "b)Combustíveis.", "c)Bebidas", "d)Festas", "a");
         p.getPerguntasVietna().add(p);
-        p = new Perguntas("", "", "", "", "", "");
+        p = new Perguntas("Quem eram os vietcongues?", "a)Frente Nacional para a Libertação do Vietname.", "b)Frente Internacional para a Libertação do Vietname.", "c)Exército do veitnã do sul", "d)Soldados americanos", "a");
         p.getPerguntasVietna().add(p);
-        p = new Perguntas("", "", "", "", "", "");
+        p = new Perguntas("Quando se iniciou a guerra do vietnã?", "a)1959.", "b)1949.", "c)1979.", "d)1969.", "a");
         p.getPerguntasVietna().add(p);
-        p = new Perguntas("", "", "", "", "", "");
+        p = new Perguntas("Quando acabou a guerra do vietnã?", "a)1975.", "b)1985.", "c)1965.", "d)1970.", "a");
         p.getPerguntasVietna().add(p);
-        p = new Perguntas("", "", "", "", "", "");
+        p = new Perguntas("Aproximadamente, quantas pessoas morreram nessa guerra?", "a)1 milhão.", "b)0,5 milhões.", "c)100 mil.", "d)2 milhões.", "a");
         p.getPerguntasVietna().add(p);
-        p = new Perguntas("", "", "", "", "", "");
+        p = new Perguntas("O que aconteceu com o país após a guerra?", "a)O Vietnã foi reunificado em 2 de julho de 1976 sob o regime comunista, aliado da União Soviética.", "b)O Vietnã foi reunificado em 2 de julho de 1976 sob o regime capitalista, aliado da Rússia.", "c)O Vietnã foi reunificado em 2 de julho de 1976 sob o regime comunista, aliado da Alemanha.", "d)O Vietnã foi reunificado em 2 de julho de 1976 sob o regime capitalista, aliado dos EUA.", "a");
         p.getPerguntasVietna().add(p);
-        p = new Perguntas("", "", "", "", "", "");
+        p = new Perguntas("Algumas das consequências dessa guerra foram:", "a)A guerra arrasou campos agrícolas, destruiu casas e provocou prejuízos econômicos gravíssimos no Vietnã.", "b)Não houve consequências.", "c)A guerra arrasou campos agrícolas, destruiu casas e provocou prejuízos econômicos gravíssimos na China.", "d)A guerra gerou lucros econômicos ao Vietnã.", "a");
         p.getPerguntasVietna().add(p);
-        p = new Perguntas("", "", "", "", "", "");
+        p = new Perguntas("Quem foi o vencedor da guerra?", "a)Vietnã do Norte.", "b)Vietnã do Sul.", "c)Vietnã do Leste.", "d)Vietnã do Oeste.", "a");
         p.getPerguntasVietna().add(p);
-        p = new Perguntas("", "", "", "", "", "");
+        p = new Perguntas("Aproximadamente, qual foi a estimativa de feridos nessa guerra?", "a)2 milhões.", "b)10 milhões.", "c)100 mil.", "d)Não houve feridos.", "a");
         p.getPerguntasVietna().add(p);
-        p = new Perguntas("", "", "", "", "", "");
+        p = new Perguntas("Qual foi o pretexto estadunidense para a sua entrada na guerra?", "a)Incidente do Golfo de Tonquim. Nesse incidente, a embarcação USS Maddox foi supostamente atacada duas vezes por torpedeiros norte-vietnamitas", "b)Incidente do Golfo de Bahamas. Nesse incidente, a embarcação USS Maddox foi supostamente atacada duas vezes por torpedeiros norte-vietnamitas.", "c)Ataque terrorista a Chicago.", "d)Não havia motivos.", "a");
         p.getPerguntasVietna().add(p);
-        p = new Perguntas("", "", "", "", "", "");
+        p = new Perguntas("Porque essa guerra gerou tanta repercurssão?", "a)Por conta da globalização", "b)Não gerou repercurssão.", "c)Por causa dos extraterrestres.", "d)Por que sim.", "a");
         p.getPerguntasVietna().add(p);
     }
 
     public void esvaziaValores() {
         perguntas.clear();
         quantAcertos = 0;
-        quantErros = 0;
-        quantPulos = 0;
-        quantAjudas = 0;
     }
 
     public ArrayList<Perguntas> geraPergundas(String assunto) {
@@ -203,34 +207,50 @@ public class Metodos {
     }
 
     public void verificaPergunta(int indice, String reposta) {
-        if (reposta.equals(perguntas.get(indice).resposta)) {
+        
+        if (reposta.equals(perguntas.get(indice).getResposta())) {
             quantAcertos++;
         }
     }
 
-    /*
-    public void realizaAjuda(String pergunta) {
+    public String realizaAjuda(int questao) {
         boolean valido = false;
+        String ajuda = "";
         do {
             int indice = rand.nextInt(4);
-            for (int i = 0; i < perguntas.size(); i++) {
-                if(pergunta.equals(perguntas.get(i).pergunta)){
-                    if(rand == 0){
-                        if(){
-                            
-                        }
-                    }
+            valido = true;
+            if (indice == 1) {
+                if (perguntas.get(questao).getResposta().equals("a")) {
+                    valido = false;
+                } else {
+                    ajuda = "a";
+                }
+            }
+            if (indice == 2) {
+                if (perguntas.get(questao).getResposta().equals("b")) {
+                    valido = false;
+                } else {
+                    ajuda = "b";
+                }
+            }
+            if (indice == 3) {
+                if (perguntas.get(questao).getResposta().equals("c")) {
+                    valido = false;
+                } else {
+                    ajuda = "c";
+                }
+            }
+            if (indice == 4) {
+                if (perguntas.get(questao).getResposta().equals("d")) {
+                    valido = false;
+                } else {
+                    ajuda = "d";
                 }
             }
         } while (valido == false);
+        return ajuda;
     }
-     */
-     /*
-    public void pulaQuestao() {
 
-    }
-     */
-    
     public String geraData() {
         DateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
         Date date = new Date();

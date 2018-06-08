@@ -30,8 +30,6 @@ public class TelaInicial extends javax.swing.JFrame {
         botaoSair = new javax.swing.JButton();
         labelAssunto = new javax.swing.JLabel();
         comboAssunto = new javax.swing.JComboBox<>();
-        labelNome = new javax.swing.JLabel();
-        campoNome = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Menu Principal");
@@ -62,8 +60,6 @@ public class TelaInicial extends javax.swing.JFrame {
 
         comboAssunto.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1ª Guerra Mundial", "2ª Guerra Mundial", "Guerra do Vietnã" }));
 
-        labelNome.setText("Digite seu nome:");
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -79,13 +75,9 @@ public class TelaInicial extends javax.swing.JFrame {
                         .addComponent(botaoSair))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(29, 29, 29)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(labelAssunto)
-                            .addComponent(labelNome))
+                        .addComponent(labelAssunto)
                         .addGap(64, 64, 64)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(campoNome)
-                            .addComponent(comboAssunto, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                        .addComponent(comboAssunto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(41, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -95,11 +87,7 @@ public class TelaInicial extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(labelAssunto)
                     .addComponent(comboAssunto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(labelNome)
-                    .addComponent(campoNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 169, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 207, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(botaoConfirmar)
                     .addComponent(botaoRanking)
@@ -123,34 +111,26 @@ public class TelaInicial extends javax.swing.JFrame {
     private void botaoConfirmarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoConfirmarActionPerformed
         boolean invalido = false;
         Metodos m = new Metodos();
-        if(campoNome.getText().isEmpty()){
-            campoNome.requestFocus();
-            Popups.displayErrorMessageJOP("Nome inválido!", this);
-            invalido = true;
-            return;
-        }
-        Jogador j = new Jogador();
-        for (int i = 0; i < j.getJogadores().size(); i++) {
-            if(campoNome.getText().equals(j.getJogadores().get(i).getNome())){
-                campoNome.requestFocus();
-                Popups.displayErrorMessageJOP("Nome inválido!", this);
-                invalido = true;
-                break;
-            }            
-        }
+        
         if(invalido == false){
             if(comboAssunto.getSelectedItem().equals("1ª Guerra Mundial")){
                 m.esvaziaValores();
                 m.geraPergundas("1ª Guerra Mundial");
-                new FormAssunto1();
+                this.dispose();
+                FormAssunto1 f1 = new FormAssunto1();
+                f1.setVisible(true);
             }else if(comboAssunto.getSelectedItem().equals("2ª Guerra Mundial")){
                 m.esvaziaValores();
                 m.geraPergundas("2ª Guerra Mundial");
-                new FormAssunto2();
+                this.dispose();
+                FormAssunto2 f2 = new FormAssunto2();
+                f2.setVisible(true);
             }else{
                 m.esvaziaValores();
                 m.geraPergundas("Guerra do Vietnã");
-                new FormAssunto3();
+                this.dispose();
+                FormAssunto3 f3 = new FormAssunto3();
+                f3.setVisible(true);
             }
         }
     }//GEN-LAST:event_botaoConfirmarActionPerformed
@@ -194,9 +174,7 @@ public class TelaInicial extends javax.swing.JFrame {
     private javax.swing.JButton botaoConfirmar;
     private javax.swing.JButton botaoRanking;
     private javax.swing.JButton botaoSair;
-    private javax.swing.JTextField campoNome;
     private javax.swing.JComboBox<String> comboAssunto;
     private javax.swing.JLabel labelAssunto;
-    private javax.swing.JLabel labelNome;
     // End of variables declaration//GEN-END:variables
 }
